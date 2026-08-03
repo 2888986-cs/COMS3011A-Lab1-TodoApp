@@ -5,12 +5,15 @@ export async function GET(request: NextRequest) {
     const archived =
     request.nextUrl.searchParams.get("archived") === "true";
 
+    const sort =
+    request.nextUrl.searchParams.get("sort") || "dueDate";
+
     const tasks = await prisma.task.findMany({
         where: {
             archived,
         },
         orderBy: {
-            dueDate: "asc",
+            [sort]: "asc",
         },
     });
 
