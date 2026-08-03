@@ -29,8 +29,16 @@ export default function TaskCard({
         }
     }
 
+    const overdue =
+        new Date(task.dueDate) < new Date() &&
+        task.status !== "COMPLETE";
+
     return (
-        <div className="rounded-lg border p-4 shadow">
+        <div
+            className={`rounded-lg border p-4 shadow ${
+                overdue ? "border-red-500 bg-red-100" : ""
+            }`}
+        >
             <h2 className="text-xl font-bold">{task.title}</h2>
 
             <p>{task.description}</p>
@@ -38,6 +46,12 @@ export default function TaskCard({
             <p>📚 {task.topic}</p>
 
             <p>📅 {new Date(task.dueDate).toLocaleDateString()}</p>
+
+            {overdue && (
+                <p className="mt-2 font-bold text-red-600">
+                    ⚠️ Overdue
+                </p>
+            )}
 
             <p>✅ {task.status}</p>
 
