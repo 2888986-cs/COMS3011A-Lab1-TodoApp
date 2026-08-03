@@ -1,36 +1,148 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Todo Application
 
-## Getting Started
+A simple Todo application built with **Next.js**, **Prisma**, and **SQLite** for COMS3011A Lab 1.
 
-First, run the development server:
+## Features
+
+* Create new tasks
+* Edit existing tasks
+* Archive tasks (tasks are not deleted)
+* View archived tasks in a sidebar
+* Sort tasks by:
+
+  * Due Date
+  * Topic
+  * Status
+* Highlight overdue tasks
+* Persist data using SQLite
+
+---
+
+# Third-Party Code
+
+| Library / Package | Reason for Use                                                                 |
+| ----------------- | ------------------------------------------------------------------------------ |
+| Next.js           | Provides the framework, routing system and API routes for the application.     |
+| React             | Used to build the user interface with reusable components.                     |
+| Prisma            | ORM used to communicate with the SQLite database using TypeScript.             |
+| SQLite            | Lightweight local database used to persist tasks between application restarts. |
+| Tailwind CSS      | Used to style the application quickly with utility classes.                    |
+| Vitest            | Used to create and run automated tests for the application.                    |
+
+---
+
+# Database Design
+
+The application uses a single SQLite database managed through Prisma.
+
+## Task Table
+
+| Column      | Type     | Description                                         |
+| ----------- | -------- | --------------------------------------------------- |
+| id          | Integer  | Primary key, automatically generated.               |
+| title       | String   | Title of the task.                                  |
+| description | String   | Description of the task.                            |
+| topic       | String   | Topic associated with the task.                     |
+| dueDate     | DateTime | Due date of the task.                               |
+| status      | Enum     | Task status (`TODO`, `IN_PROGRESS`, or `COMPLETE`). |
+| archived    | Boolean  | Indicates whether the task has been archived.       |
+| createdAt   | DateTime | Date and time the task was created.                 |
+| updatedAt   | DateTime | Automatically updated whenever the task changes.    |
+
+### Relationships
+
+The application contains only one table (`Task`), so there are no relationships with other tables.
+
+### Design Decisions
+
+* Tasks are **archived instead of deleted** by using the `archived` Boolean field.
+* The **overdue** state is **not stored** in the database. It is calculated dynamically by comparing the current date with the task's due date and checking that the task is not marked as `COMPLETE`.
+* Task status is restricted to three fixed values:
+
+  * `TODO`
+  * `IN_PROGRESS`
+  * `COMPLETE`
+
+---
+
+# Running It
+
+## Requirements
+
+* Node.js v22.x (or your installed Node.js version)
+* npm
+
+## Installation
+
+Clone the repository:
+
+```bash
+git clone <repository-url>
+cd todo-app
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Create the SQLite database and apply migrations:
+
+```bash
+npx prisma migrate dev
+```
+
+Generate the Prisma client (if required):
+
+```bash
+npx prisma generate
+```
+
+Run the application:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+# Running Tests
 
-To learn more about Next.js, take a look at the following resources:
+Run all automated tests:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm test
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+# Project Structure
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```
+app/
+components/
+lib/
+prisma/
+public/
+tests/
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+# Technologies Used
+
+* Next.js
+* React
+* Prisma ORM
+* SQLite
+* Tailwind CSS
+* TypeScript
+* Vitest
+
