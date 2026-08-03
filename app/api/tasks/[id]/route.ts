@@ -23,3 +23,21 @@ export async function PUT(
 
     return NextResponse.json(task);
 }
+
+export async function PATCH(
+    request: NextRequest,
+    context: { params: Promise<{ id: string }> }
+) {
+    const { id } = await context.params;
+
+    const task = await prisma.task.update({
+        where: {
+            id: Number(id),
+        },
+        data: {
+            archived: true,
+        },
+    });
+
+    return NextResponse.json(task);
+}
