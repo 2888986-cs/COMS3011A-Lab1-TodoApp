@@ -1,4 +1,5 @@
 import { prisma } from "@/lib/prisma";
+import EditForm from "./EditForm";
 
 type Props = {
     params: Promise<{
@@ -22,6 +23,17 @@ export default async function EditPage({ params }: Props) {
     return (
         <div className="mx-auto mt-10 max-w-xl">
             <h1 className="mb-6 text-3xl font-bold">Edit Task</h1>
+
+            <EditForm
+                task={{
+                    id: task.id,
+                    title: task.title,
+                    description: task.description,
+                    topic: task.topic,
+                    dueDate: task.dueDate.toISOString().split("T")[0],
+                    status: task.status,
+                }}
+            />
 
             <form className="space-y-4">
 
