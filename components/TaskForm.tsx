@@ -1,5 +1,5 @@
 "use client";
-
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 export default function TaskForm() {
@@ -7,6 +7,7 @@ export default function TaskForm() {
     const [description, setDescription] = useState("");
     const [topic, setTopic] = useState("");
     const [dueDate, setDueDate] = useState("");
+    const router = useRouter();
 
     async function handleSubmit(e: React.FormEvent) {
         e.preventDefault();
@@ -30,7 +31,8 @@ export default function TaskForm() {
             setTitle("");
             setDescription("");
             setTopic("");
-        setDueDate("");
+            setDueDate("");
+            router.refresh();
         } else {
             alert("Something went wrong.");
         }
