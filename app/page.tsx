@@ -1,4 +1,5 @@
 import TaskForm from "@/components/TaskForm";
+import TaskList from "@/components/TaskList";
 
 export default function Home() {
   return (
@@ -8,6 +9,8 @@ export default function Home() {
       </h1>
 
       <TaskForm />
+
+      <TaskList />
     </main>
   );
 }
