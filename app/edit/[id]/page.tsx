@@ -34,37 +34,6 @@ export default async function EditPage({ params }: Props) {
                     status: task.status,
                 }}
             />
-
-            <form className="space-y-4">
-
-            <input
-                defaultValue={task.title}
-                className="w-full rounded border p-2"
-            />
-
-            <textarea
-                defaultValue={task.description}
-                className="w-full rounded border p-2"
-            />
-
-            <input
-                defaultValue={task.topic}
-                className="w-full rounded border p-2"
-            />
-
-            <input
-                type="date"
-                defaultValue={task.dueDate.toISOString().split("T")[0]}
-                className="w-full rounded border p-2"
-            />
-
-            <button
-                className="rounded bg-blue-600 px-4 py-2 text-white"
-            >
-                Save Changes
-            </button>
-
-            </form>
         </div>
     );
 }
