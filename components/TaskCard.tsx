@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 
 type Task = {
     id: number;
@@ -56,9 +57,11 @@ export default function TaskCard({
             <p>✅ {task.status}</p>
 
         <div className="mt-4 flex gap-2">
-            <button className="rounded bg-yellow-500 px-4 py-2 text-white">
-            Edit
-            </button>
+            <Link href={`/edit/${task.id}`}>
+                <button className="rounded bg-yellow-500 px-4 py-2 text-white">
+                    Edit
+                </button>
+            </Link>
 
             {!task.archived && (
                 <button
