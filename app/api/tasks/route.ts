@@ -1,10 +1,13 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 
-export async function GET() {
+export async function GET(request: NextRequest) {
+    const archived =
+    request.nextUrl.searchParams.get("archived") === "true";
+
     const tasks = await prisma.task.findMany({
         where: {
-            archived: false,
+            archived,
         },
         orderBy: {
             dueDate: "asc",

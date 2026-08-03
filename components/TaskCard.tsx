@@ -7,6 +7,7 @@ type Task = {
     topic: string;
     dueDate: string;
     status: string;
+    archived?: boolean;
 };
 
 export default function TaskCard({
@@ -45,12 +46,14 @@ export default function TaskCard({
             Edit
             </button>
 
-            <button
-                onClick={archiveTask}
-                className="rounded bg-red-600 px-4 py-2 text-white"
-            >
-            Archive
-            </button>
+            {!task.archived && (
+                <button
+                    onClick={archiveTask}
+                    className="rounded bg-red-600 px-4 py-2 text-white"
+                >
+                    Archive
+                </button>
+            )}
         </div>
         </div>
     );
