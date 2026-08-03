@@ -145,4 +145,5 @@ tests/
 * Tailwind CSS
 * TypeScript
 * Vitest
+* Postman
 
