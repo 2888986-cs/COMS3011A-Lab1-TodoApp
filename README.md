@@ -165,3 +165,6 @@ The preceding lab was reviewed and edited with the assistance of:
 
 * ChatGPT Web [GPT-5.5]
 
+**Transcript of AI usage**
+
+https://chatgpt.com/share/6a7128a3-50e8-83ea-948c-cfb5c7715e77
