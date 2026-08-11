@@ -86,6 +86,18 @@ After installation, verify it:
 git --version
 ```
 
+# Install Node.js
+
+Install Node.js from:
+
+https://nodejs.org/en/download
+
+Then verify:
+```bash
+node --version
+npm --version
+```
+
 Clone the repository:
 
 ```bash
@@ -98,17 +110,6 @@ Go to the folder
 cd COMS3011A-Lab1-TodoApp
 ```
 
-# Install Node.js
-
-Install Node.js from:
-
-https://nodejs.org/en/download
-
-Then verify:
-```bash
-node --version
-npm --version
-```
 
 Install dependencies:
 
