@@ -80,7 +80,7 @@ The application contains only one table (`Task`), so there are no relationships 
 
 https://git-scm.com/install/windows
 
-After installation, verify it:
+After installation, Open Git Bash and verify it:
 
 ```bash
 git --version
@@ -92,7 +92,7 @@ Install Node.js from:
 
 https://nodejs.org/en/download
 
-Close and reopen Git Bash
+**Close and reopen Git Bash**
 
 Then verify:
 ```bash
