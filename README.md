@@ -82,7 +82,9 @@ https://git-scm.com/install/windows
 
 After installation, verify it:
 
+```bash
 git --version
+```
 
 Clone the repository:
 
