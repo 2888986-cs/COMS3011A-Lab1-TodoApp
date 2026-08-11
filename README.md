@@ -92,6 +92,8 @@ Install Node.js from:
 
 https://nodejs.org/en/download
 
+Close and reopen Git Bash
+
 Then verify:
 ```bash
 node --version
