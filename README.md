@@ -74,6 +74,16 @@ The application contains only one table (`Task`), so there are no relationships 
 
 ## Installation
 
+# Install Git
+
+*If Git is not already installed, download and install it from the official Git website:*
+
+https://git-scm.com/install/windows
+
+After installation, verify it:
+
+git --version
+
 Clone the repository:
 
 ```bash
