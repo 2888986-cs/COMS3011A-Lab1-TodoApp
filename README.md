@@ -112,6 +112,41 @@ Go to the folder
 cd COMS3011A-Lab1-TodoApp
 ```
 
+**Create the Environment File**
+
+Create a .env file in the project root:
+
+```bash
+touch .env
+```
+
+Open the *.env* file using the nano text editor:
+
+```bash
+nano .env
+```
+
+Add the following line:
+
+DATABASE_URL="file:./dev.db"
+
+Save and exit nano:
+
+Press **Ctrl + O** to save.
+Press **Enter** to confirm the filename.
+Press **Ctrl + X** to exit.
+
+Verify that the *.env* file contains the database URL:
+
+```bash
+cat .env
+```
+
+It should display:
+
+```bash
+DATABASE_URL="file:./dev.db"
+```
 
 Install dependencies:
 
@@ -137,7 +172,7 @@ Run the application:
 npm run dev
 ```
 
-Open:
+On your browser, open:
 
 ```
 http://localhost:3000
