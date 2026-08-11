@@ -77,8 +77,8 @@ The application contains only one table (`Task`), so there are no relationships 
 Clone the repository:
 
 ```bash
-git clone <repository-url>
-cd todo-app
+git clone https://github.com/2888986-cs/COMS3011A-Lab1-TodoApp.git
+cd COMS3011A-Lab1-TodoApp
 ```
 
 Install dependencies:
