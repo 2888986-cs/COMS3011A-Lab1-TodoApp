@@ -135,9 +135,9 @@ DATABASE_URL="file:./dev.db"
 Save and exit nano:
 
 ```bash
-Press **Ctrl + O** to save.
-Press **Enter** to confirm the filename.
-Press **Ctrl + X** to exit.
+Press Ctrl + O to save.
+Press Enter to confirm the filename.
+Press Ctrl + X to exit.
 ```
 
 Verify that the *.env* file contains the database URL:
