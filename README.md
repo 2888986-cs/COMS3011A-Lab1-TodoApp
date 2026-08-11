@@ -90,7 +90,24 @@ Clone the repository:
 
 ```bash
 git clone https://github.com/2888986-cs/COMS3011A-Lab1-TodoApp.git
+```
+
+Go to the folder
+
+```bash
 cd COMS3011A-Lab1-TodoApp
+```
+
+# Install Node.js
+
+Install Node.js from:
+
+https://nodejs.org/en/download
+
+Then verify:
+```bash
+node --version
+npm --version
 ```
 
 Install dependencies:
